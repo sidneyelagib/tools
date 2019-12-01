@@ -71,7 +71,7 @@ HIST_STAMPS="mm/dd/yyyy HH:mm:ss"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git git-extras git-remote-branch common-aliases docker jsontools kubectl sdk sudo urltools macports encode64 vscode)
-plugins=(git git-extras autojump common-aliases copyfile docker encode64 git-remote-branch jsontools kubectl macports mvn npm perms python sdk sudo urltools vi-mode vscode)
+plugins=(git git-extras common-aliases docker jsontools kubectl npm urltools)
 
 if [ -f ~/.shell_exports ]; then
     source ~/.shell_exports
