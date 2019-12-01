@@ -159,7 +159,7 @@
   # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f"
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX='%244F─╮'
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX='%244F─┤'
@@ -966,10 +966,12 @@
 	  typeset -g POWERLEVEL9K_USER_ICON="\uF415" # 
 	
 	  function prompt_wifi_signal() {
-	    local signal=$(airport -I | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g')
-	    local noise=$(airport -I | grep agrCtlNoise | awk '{print $2}' | sed 's/-//g')
+      local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I)
+	    local signal=$(echo $output | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g')
+	    local noise=$(echo $output | grep agrCtlNoise | awk '{print $2}' | sed 's/-//g')
 	    #local ethernet=$(ifconfig | grep -B 4 "inet.*broadcast" | grep -Po '^ens?[1-9]+')
 	    local ethernet=$(ifconfig | grep -B 4 "inet.*broadcast" | grep -Eo '^ens?[1-9]+')
+      local speed=$(echo $output | grep 'lastTxRate' | awk -F': ' '{print $2}')
 	
 	    if [ ! -z $signal ] && [ $noise > 0 ]; then
 	      local SNR=$(bc <<<"scale=2; $signal / $noise")
@@ -1011,7 +1013,7 @@
 	      then color='%F{}' ; symbol=$'\ufbf1' ; # Network icon
 	    fi
 	
-	    p10k segment -b black -f $color -i "$symbol "
+	    p10k segment -b black -f $color -i $symbol -t " $speed Mbps"
 	}
 
   # If p10k is already loaded, reload configuration.

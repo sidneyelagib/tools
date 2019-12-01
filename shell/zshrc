@@ -1,5 +1,9 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -7,7 +11,6 @@
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME_CONFIG="~/.config/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,17 +70,14 @@ HIST_STAMPS="mm/dd/yyyy HH:mm:ss"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git git-extras git-remote-branch common-aliases docker jsontools kubectl sdk sudo urltools macports encode64 vscode)
+plugins=(git git-extras autojump common-aliases copyfile docker encode64 git-remote-branch jsontools kubectl macports mvn npm perms python sdk sudo urltools vi-mode vscode)
 
-# Run aditional scripts and aliases
 if [ -f ~/.shell_exports ]; then
     source ~/.shell_exports
 fi
 if [ -f ~/.shell_aliases ]; then
     source ~/.shell_aliases
-fi
-if [ -f $ZSH_THEME_CONFIG/vconfig ]; then
-    source $ZSH_THEME_CONFIG/vconfig
 fi
 if [ -f $ZSH/oh-my-zsh.sh ]; then
     source $ZSH/oh-my-zsh.sh
@@ -85,20 +85,12 @@ fi
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
+#if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,16 +100,13 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
 
-# Neofetch to beautify terminal
-#neofetch
+# Starting the sdkman 
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-# Enabling NTFS support for mac
-#https://medium.com/swlh/how-to-read-write-on-external-hdd-with-ntfs-partition-on-macos-2aa2db1f8a5
-#sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS1 -olocal -oallow_other
-
-# Setting Java
-java8
+# Neofetch for
+neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
