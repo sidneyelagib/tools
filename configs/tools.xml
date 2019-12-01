@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--perforce-xml-version=1.0-->
+<CustomToolDefList varName="customtooldeflist">
+ <CustomToolFolder>
+  <Name>SFLY</Name>
+  <CustomToolDefList>
+   <CustomToolDef>
+    <Definition>
+     <Name>SFLY - Remote Submit - FULL</Name>
+     <Command>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/</Command>
+     <Arguments>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/rsubmit -y -c %C</Arguments>
+     <Shortcut></Shortcut>
+    </Definition>
+    <Console>
+     <CloseOnExit>false</CloseOnExit>
+    </Console>
+    <AddToContext>true</AddToContext>
+    <Refresh>true</Refresh>
+    <IgnoreP4Config>true</IgnoreP4Config>
+   </CustomToolDef>
+   <CustomToolDef>
+    <Definition>
+     <Name>SFLY - Remote Submit - Functional Tests</Name>
+     <Command>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/</Command>
+     <Arguments>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/rsubmit -y -c %C -p functional-test</Arguments>
+     <Shortcut></Shortcut>
+    </Definition>
+    <Console>
+     <CloseOnExit>false</CloseOnExit>
+    </Console>
+    <AddToContext>true</AddToContext>
+    <Refresh>true</Refresh>
+    <IgnoreP4Config>true</IgnoreP4Config>
+   </CustomToolDef>
+   <CustomToolDef>
+    <Definition>
+     <Name>SFLY - Nuke Changelist</Name>
+     <Command>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/</Command>
+     <Arguments>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/nukecl -c %C</Arguments>
+     <Shortcut></Shortcut>
+    </Definition>
+    <Console>
+     <CloseOnExit>false</CloseOnExit>
+    </Console>
+    <AddToContext>true</AddToContext>
+    <Refresh>true</Refresh>
+    <IgnoreP4Config>true</IgnoreP4Config>
+   </CustomToolDef>
+   <CustomToolDef>
+    <Definition>
+     <Name>SFLY - DIAG</Name>
+     <Command>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/</Command>
+     <Arguments>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/diag</Arguments>
+     <Shortcut></Shortcut>
+    </Definition>
+    <Console>
+     <CloseOnExit>false</CloseOnExit>
+    </Console>
+    <AddToContext>true</AddToContext>
+    <IgnoreP4Config>true</IgnoreP4Config>
+   </CustomToolDef>
+  </CustomToolDefList>
+ </CustomToolFolder>
+ <CustomToolDef>
+  <Definition>
+   <Name>SmartBear - Add to Review</Name>
+   <Command>/Applications/ccollab_client/ccollabgui.app/Contents/MacOS/JavaApplicationStub</Command>
+   <Arguments>--pause-on-error --scm perforce --p4port $p --p4user $u --p4client "emptyArgumentPrefix $c emptyArgumentSuffix" addchangelist ask %C</Arguments>
+   <Shortcut></Shortcut>
+  </Definition>
+  <AddToContext>true</AddToContext>
+ </CustomToolDef>
+</CustomToolDefList>

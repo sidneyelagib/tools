@@ -1,0 +1,19 @@
+export P4USER="selagib"
+export P4PORT="perforce.internal.shutterfly.com:1666"
+export P4CLIENT=selagib-mbp
+export P4EDITOR=/usr/bin/vi
+export SF_HOME=/dist/sfsite
+export WS_HOME=/dist/ws
+export CATALINA_HOME=/opt/tomcat
+export LANG="en_US.UTF-8"
+export REBEL_BASE=/dist/jrebel
+export JREBEL_JAR="$REBEL_BASE/lib/libjrebel64.so"
+export CUSTOM_BASH_DIR=/dist/ws/selagib/tools/bash
+export GOPATH=/dist/ws/go
+# MacPorts Installer addition on 2019-05-14_at_21:38:47: adding an appropriate PATH variable for use with MacPorts.
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# Finished adapting your PATH environment variable for use with MacPorts.
+export MANPATH="/opt/local/share/man:$MANPATH"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
