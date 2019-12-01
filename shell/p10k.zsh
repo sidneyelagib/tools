@@ -63,21 +63,21 @@
       #nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
       #nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       #nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-      node_version          # node.js version
-      go_version            # go version (https://golang.org)
+      #node_version          # node.js version
+      #go_version            # go version (https://golang.org)
       # rust_version          # rustc version (https://www.rust-lang.org)
       # dotnet_version        # .NET version (https://dotnet.microsoft.com)
       #rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
-      rvm                     # ruby version from rvm (https://rvm.io)
-      kubecontext             # current kubernetes context (https://kubernetes.io/)
-      terraform               # terraform workspace (https://www.terraform.io)
-      aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+      #rvm                     # ruby version from rvm (https://rvm.io)
+      #kubecontext             # current kubernetes context (https://kubernetes.io/)
+      #terraform               # terraform workspace (https://www.terraform.io)
+      #aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
       # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
       # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
       #context                 # user@hostname
       #nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       #ranger                  # ranger shell (https://github.com/ranger/ranger)
-      #vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
+      vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
       #vpn_ip                # virtual private network indicator
       ram                   # free RAM
       load                  # CPU load
@@ -334,11 +334,11 @@
 
   #####################################[ vcs: git status ]######################################
   # Versio control system colors.
-  # typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
-  # typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
-  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
-  # typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
-  # typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+   typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
+   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
+   typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
+   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
+   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
@@ -445,7 +445,7 @@
 
   # Status on success. No content, just an icon. No need to show it if prompt_char is enabled as
   # it will signify success by turning green.
-  typeset -g POWERLEVEL9K_STATUS_OK=false
+  typeset -g POWERLEVEL9K_STATUS_OK=true
   typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
   # typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=2
   # typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=0
@@ -484,7 +484,7 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
   # Show duration of the last command if takes longer than this many seconds.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
   # Show this many fractional digits. Zero means round to seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   # Duration format: 1d 2h 3m 4s.
