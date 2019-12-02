@@ -969,11 +969,11 @@
       local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I)
 	    local signal=$(echo $output | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g')
 	    local noise=$(echo $output | grep agrCtlNoise | awk '{print $2}' | sed 's/-//g')
-	    #local ethernet=$(ifconfig | grep -B 4 "inet.*broadcast" | grep -Po '^ens?[1-9]+')
+	  
 	    local ethernet=$(ifconfig | grep -B 4 "inet.*broadcast" | grep -Eo '^ens?[1-9]+')
       local speed=$(echo $output | grep 'lastTxRate' | awk -F': ' '{print $2}')
-	
-	    if [ ! -z $signal ] && [ $noise > 0 ]; then
+      
+	    if [ ! -z $signal ] && [ $noise -gt 0 ]; then
 	      local SNR=$(bc <<<"scale=2; $signal / $noise")
 	    fi
 	
@@ -983,22 +983,22 @@
 	    
 	
 	    # Excellent Signal (5 bars)
-	    if [[ ! -z "${signal// }" ]] && [[ $SNR > .40 ]] ;
+	    if [[ ! -z "${signal// }" ]] && [[ $SNR -gt .40 ]] ;
 	      then color='green' ; symbol=$'\uf1eb' ; # Wifi icon
 	    fi
 	
 	    # Good Signal (3-4 bars)
-	    if [[ ! -z "${signal// }" ]] && [[ ! $SNR > .40 ]] && [[ $SNR > .25 ]] ;
+	    if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .40 ]] && [[ $SNR -gt .25 ]] ;
 	      then color='green' ; symbol=$'\uf1eb' ; # Wifi icon
 	    fi
 	
 	    # Low Signal (2 bars)
-	    if [[ ! -z "${signal// }" ]] && [[ ! $SNR > .25 ]] && [[ $SNR > .15 ]] ;
+	    if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .25 ]] && [[ $SNR -gt .15 ]] ;
 	      then color='yellow' ; symbol=$'\ufaa8' ; # Less wifi icon
 	    fi
 	
 	    # Very Low Signal (1 bar)
-	    if [[ ! -z "${signal// }" ]] && [[ ! $SNR > .15 ]] && [[ $SNR > .10 ]] ;
+	    if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .15 ]] && [[ $SNR -gt .10 ]] ;
 	      then color='orange' ; symbol=$'\ufaa8' ; # Less wifi icon
 	    fi
 	
