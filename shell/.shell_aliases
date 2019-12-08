@@ -1,0 +1,12 @@
+#!/bin/bash
+alias ls='ls -GFh'
+alias ll="ls -lA"
+alias updatedb="sudo /usr/libexec/locate.updatedb"
+alias xcode="open -a Xcode"
+alias vsc="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+# Enabling NTFS support for mac
+#https://medium.com/swlh/how-to-read-write-on-external-hdd-with-ntfs-partition-on-macos-2aa2db1f8a5
+alias ntfs-mount="sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS1 -olocal -oallow_other"
+alias ro="chmod 0444"
+alias rw="chmod 0755"
+alias frw="chmod 0777"

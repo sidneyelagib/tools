@@ -1,0 +1,15 @@
+# Man Pages
+export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Java Home
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# SDKMAN Dir
+export SDKMAN_DIR=/usr/local/sdkman
+
+# Export the path
+export PATH="$HOME/bin::$JAVA_HOME/bin:/opt/apache-jmeter-5.2.1/bin:/usr/local/bin::/opt/local/bin:/opt/local/sbin:$PATH"
+

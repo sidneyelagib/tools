@@ -77,7 +77,7 @@ export ARCHFLAGS="-arch x86_64"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git git-extras git-remote-branch common-aliases docker jsontools kubectl sdk sudo urltools macports encode64 vscode)
-plugins=(git git-extras common-aliases docker git-remote-branch jsontools kubectl npm python urltools vi-mode)
+plugins=(git git-extras common-aliases docker git-remote-branch kubectl npm python urltools)
 
 # Export the custom exports
 [[ ! -f $HOME/.shell_exports ]] || source $HOME/.shell_exports
