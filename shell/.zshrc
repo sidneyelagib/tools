@@ -76,17 +76,7 @@ export ARCHFLAGS="-arch x86_64"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git git-extras git-remote-branch common-aliases docker jsontools kubectl sdk sudo urltools macports encode64 vscode)
-plugins=(git git-extras common-aliases docker git-remote-branch kubectl npm python urltools)
-
-# Export the custom exports
-[[ ! -f $HOME/.shell_exports ]] || source $HOME/.shell_exports
-
-# Export the custom aliases
-[[ ! -f $HOME/.shell_aliases ]] || source $HOME/.shell_aliases
-
-# Run the Oh My ZSH
-[[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
+plugins=(git docker kubectl macos asdf aws brew)
 
 # User configuration
 
@@ -107,14 +97,43 @@ plugins=(git git-extras common-aliases docker git-remote-branch kubectl npm pyth
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Starting the sdkman 
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+# Starting the sdkman
+#SDKMAN_DIR="/usr/local/sdkman" 
+#[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+# Export the custom exports
+# Loading the scripts to provide additional functionality
+CUSTOM_FUNCTIONS_DIR="$HOME/workspaces/tools/shell/shell_functions"
+for TMP_SHELL_SCRIPT in $(ls $CUSTOM_FUNCTIONS_DIR)
+do
+  SHELL_SCRIPT="$CUSTOM_FUNCTIONS_DIR/$TMP_SHELL_SCRIPT"
+  [[ ! -f $SHELL_SCRIPT ]] || source $SHELL_SCRIPT
+done;
+
+# Run the Oh My ZSH
+[[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
+
+# Export the custom exports
+[[ ! -f $HOME/.shell_exports ]] || source $HOME/.shell_exports
+
+# Export the custom aliases
+[[ ! -f $HOME/.shell_aliases ]] || source $HOME/.shell_aliases
+
 
 # Neofetch for beautifying the shell
-[[ ! -f /opt/local/bin/neofetch ]] || sh /opt/local/bin/neofetch
+[[ ! -f /opt/local/bin/neofetch ]] || bash /opt/local/bin/neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+/usr/local/bin/neofetch --config none
+
+# Homebrew
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi

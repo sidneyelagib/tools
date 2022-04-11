@@ -8,8 +8,8 @@ export LANG=en_US.UTF-8
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # SDKMAN Dir
-export SDKMAN_DIR=/usr/local/sdkman
+#export SDKMAN_DIR=/usr/local/sdkman
 
 # Export the path
-export PATH="$HOME/bin::$JAVA_HOME/bin:/opt/apache-jmeter-5.2.1/bin:/usr/local/bin::/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="$HOME/bin::$JAVA_HOME/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 
