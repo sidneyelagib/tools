@@ -76,7 +76,7 @@ export ARCHFLAGS="-arch x86_64"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker kubectl macos asdf aws brew)
+plugins=(git gh docker docker-compose aws brew)
 
 # User configuration
 
@@ -113,22 +113,19 @@ done;
 # Run the Oh My ZSH
 [[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Export the custom exports
 [[ ! -f $HOME/.shell_exports ]] || source $HOME/.shell_exports
 
 # Export the custom aliases
 [[ ! -f $HOME/.shell_aliases ]] || source $HOME/.shell_aliases
 
-
 # Neofetch for beautifying the shell
-[[ ! -f /opt/local/bin/neofetch ]] || bash /opt/local/bin/neofetch
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f /usr/local/bin/neofetch ]] || /usr/local/bin/neofetch --config none
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-/usr/local/bin/neofetch --config none
 
 # Homebrew
 if type brew &>/dev/null; then
