@@ -1,0 +1,245 @@
+# The information can be retrieved from https://starship.rs/config/#character
+
+command_timeout = 2000
+
+format = "$all"
+
+[aws]
+symbol = "  "
+[aws.region_aliases]
+us-east-1 = "nv"
+[aws.profile_aliases]
+CompanyGroupSidneyOnCallAccess = 'sidneyelagib'
+
+[battery]
+disabled = false
+
+[buf]
+symbol = " "
+disabled = true
+
+[bun]
+disabled = true
+
+[c]
+symbol = " "
+
+
+[character]
+success_symbol = "[_](bold green)"
+error_symbol = "[✗](bold red) "
+vimcmd_symbol = "[->](bold yellow)"
+
+[cmake]
+
+[cobol]
+disabled = true
+
+[cmd_duration]
+
+[conda]
+disabled = true
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[dart]
+symbol = " "
+disabled = true
+
+[deno]
+disabled = true
+
+[directory]
+read_only = " "
+truncate_to_repo = false
+truncation_symbol = "..."
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+disabled = true
+
+[elixir]
+symbol = " "
+disabled = true
+
+[elm]
+symbol = " "
+disabled = true
+
+[env_var]
+
+[erlang]
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+
+[git_state]
+merge = "[⛙ MERGING](bold yellow)"
+cherry_pick = "[🍒 CHERRY-PICKING](bold yellow)"
+revert = "[↺ REVERTING](bold red)"
+rebase = "[Ⓜ REBASING](bold green)"
+
+[git_metrics]
+disabled = false
+
+[git_status]
+staged = '[++\($count\)](green)'
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[helm]
+
+[hostname]
+
+[java]
+detect_extensions = ["java", "class", "gradle", "jar", "cljs", "cljc", "mwv"]
+symbol = " "
+
+[jobs]
+
+[julia]
+disabled = true
+symbol = " "
+
+[kotlin]
+
+[kubernetes]
+disabled = false
+format = 'on [$symbol ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+detect_files = ['k8s']
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+[kubernetes.user_aliases]
+"dev.local.cluster.k8s" = "dev"
+"root/.*" = "root"
+
+[localip]
+disabled = false
+
+[lua]
+symbol = " "
+disabled = true
+
+[memory_usage]
+disabled = false
+symbol = " "
+threshold = 75
+format = '[$symbol${ram} - (${ram_pct})]($style) '
+
+[meson]
+disabled = true
+symbol = "喝 "
+
+[hg_branch]
+symbol = " "
+disabled = true
+
+[nim]
+symbol = " "
+disabled = true
+
+[nix_shell]
+symbol = " "
+disabled = true
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+disabled = true
+
+[openstack]
+disabled = true
+format = 'on [$symbol$cloud(\($project\))]($style) '
+
+[package]
+symbol = " "
+display_private = true
+
+[perl]
+
+[php]
+detect_extensions = ["php", "phps"]
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+disabled = true
+
+[raku]
+disabled = true
+
+[red]
+disabled = true
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shell]
+zsh_indicator = "_"
+format = "[$indicator](bold green) "
+disabled = true
+
+[shlvl]
+disabled = true
+
+[singularity]
+disabled = true
+
+[spack]
+symbol = "🅢 "
+disabled = true
+
+[status]
+disabled = false
+map_symbol = true
+
+[sudo]
+disabled = true
+allow_windows = true
+symbol = "💻 "
+
+[swift]
+
+[terraform]
+
+[time]
+
+[username]
+
+[vagrant]
+
+[vlang]
+disabled = true
+
+[vcsh]
+disabled = true
+
+[zig]
+disabled = true
