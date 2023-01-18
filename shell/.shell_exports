@@ -5,7 +5,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 
 # Java Home
-export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$HOME/.asdf/installs/java/corretto-15.0.2.7.1
 
 # SDKMAN Dir
 #export SDKMAN_DIR=/usr/local/sdkman
@@ -13,3 +14,4 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Export the path
 export PATH="$HOME/bin::$JAVA_HOME/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 
+export STARSHIP_LOG=error

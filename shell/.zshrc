@@ -103,7 +103,7 @@ plugins=(git gh docker docker-compose aws brew)
 
 # Export the custom exports
 # Loading the scripts to provide additional functionality
-CUSTOM_FUNCTIONS_DIR="$HOME/workspaces/tools/shell/shell_functions"
+#CUSTOM_FUNCTIONS_DIR="$HOME/workspaces/tools/shell/shell_functions"
 for TMP_SHELL_SCRIPT in $(ls $CUSTOM_FUNCTIONS_DIR)
 do
   SHELL_SCRIPT="$CUSTOM_FUNCTIONS_DIR/$TMP_SHELL_SCRIPT"
@@ -125,7 +125,12 @@ done;
 # Neofetch for beautifying the shell
 [[ ! -f /usr/local/bin/neofetch ]] || /usr/local/bin/neofetch --config none
 
+[[ ! -f /usr/local/opt/asdf/libexec/asdf.sh ]] || source /usr/local/opt/asdf/libexec/asdf.sh
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Activate Starship shell customizer
+eval "$(starship init zsh)"
 
 # Homebrew
 if type brew &>/dev/null; then

@@ -28,6 +28,8 @@ set hlsearch  " highlight matches
 
 set foldenable " enable folding
 
+:set backspace=indent,eol,start
+
 let g:rainbow_active = 1
 
 " Installing some plugins
